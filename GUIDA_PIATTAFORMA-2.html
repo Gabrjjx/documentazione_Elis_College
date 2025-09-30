@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guida alla Piattaforma Elis College</title>
+  <style>
+    @page {
+      margin: 20mm;
+      size: A4;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 210mm;
+      margin: 0 auto;
+      padding: 20px;
+      background: white;
+    }
+    
+    /* Header con logo */
+    .document-header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 30px 20px;
+      background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+      border-radius: 10px;
+      color: white;
+      page-break-after: avoid;
+    }
+    
+    .document-header img {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 15px;
+      background: white;
+      padding: 10px;
+      border-radius: 50%;
+    }
+    
+    .document-header h1 {
+      color: white;
+      border: none;
+      margin: 0;
+      font-size: 2.5em;
+    }
+    
+    .document-header p {
+      color: rgba(255,255,255,0.9);
+      font-size: 1.1em;
+      margin-top: 10px;
+    }
+    
+    /* Sezioni informative con icone */
+    .info-box {
+      background: #f8fafc;
+      border-left: 4px solid #3b82f6;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 5px;
+      page-break-inside: avoid;
+    }
+    
+    .info-box.warning {
+      background: #fef3c7;
+      border-left-color: #f59e0b;
+    }
+    
+    .info-box.success {
+      background: #d1fae5;
+      border-left-color: #10b981;
+    }
+    
+    .info-box.tip {
+      background: #e0e7ff;
+      border-left-color: #6366f1;
+    }
+    
+    .role-card {
+      background: white;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 15px 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      page-break-inside: avoid;
+    }
+    
+    .role-card h3 {
+      color: #1e40af;
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .role-icon {
+      font-size: 1.5em;
+    }
+    
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    }
+    
+    .feature-item {
+      background: #f8fafc;
+      padding: 15px;
+      border-radius: 5px;
+      border-left: 3px solid #3b82f6;
+    }
+    
+    .feature-item h4 {
+      margin-top: 0;
+      color: #1e40af;
+    }
+    
+    h1 {
+      color: #1e40af;
+      border-bottom: 3px solid #3b82f6;
+      padding-bottom: 10px;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      page-break-after: avoid;
+    }
+    
+    h2 {
+      color: #1e40af;
+      border-bottom: 2px solid #93c5fd;
+      padding-bottom: 8px;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      page-break-after: avoid;
+    }
+    
+    h3 {
+      color: #3b82f6;
+      margin-top: 25px;
+      margin-bottom: 12px;
+      page-break-after: avoid;
+    }
+    
+    h4 {
+      color: #60a5fa;
+      margin-top: 15px;
+      margin-bottom: 10px;
+    }
+    
+    p {
+      margin-bottom: 12px;
+      text-align: justify;
+    }
+    
+    ul, ol {
+      margin-left: 25px;
+      margin-bottom: 15px;
+    }
+    
+    li {
+      margin-bottom: 8px;
+    }
+    
+    strong {
+      color: #1e40af;
+      font-weight: 600;
+    }
+    
+    em {
+      color: #64748b;
+    }
+    
+    hr {
+      border: none;
+      border-top: 2px solid #e2e8f0;
+      margin: 30px 0;
+    }
+    
+    code {
+      background: #f1f5f9;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9em;
+      color: #e11d48;
+    }
+    
+    pre {
+      background: #1e293b;
+      color: #e2e8f0;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+      margin-bottom: 15px;
+    }
+    
+    pre code {
+      background: transparent;
+      color: inherit;
+      padding: 0;
+    }
+    
+    blockquote {
+      border-left: 4px solid #3b82f6;
+      padding-left: 15px;
+      margin: 15px 0;
+      color: #64748b;
+      font-style: italic;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    
+    th, td {
+      border: 1px solid #e2e8f0;
+      padding: 12px;
+      text-align: left;
+    }
+    
+    th {
+      background: #f1f5f9;
+      font-weight: 600;
+      color: #1e40af;
+    }
+    
+    /* Step-by-step guide styling */
+    .step-list {
+      counter-reset: step-counter;
+      list-style: none;
+      margin-left: 0;
+    }
+    
+    .step-list li {
+      counter-increment: step-counter;
+      margin-bottom: 20px;
+      padding-left: 60px;
+      position: relative;
+    }
+    
+    .step-list li::before {
+      content: counter(step-counter);
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: #3b82f6;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+    
+    /* Evita interruzioni di pagina indesiderate */
+    h1, h2, h3, h4, h5, h6 {
+      page-break-inside: avoid;
+    }
+    
+    ul, ol, p {
+      orphans: 3;
+      widows: 3;
+    }
+    
+    /* Footer con info */
+    .footer {
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 2px solid #e2e8f0;
+      text-align: center;
+      color: #64748b;
+      font-size: 0.9em;
+    }
+    
+    /* Stile per la stampa */
+    @media print {
+      body {
+        padding: 0;
+      }
+      
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      
+      .no-print {
+        display: none !important;
+      }
+      
+      .document-header {
+        background: #1e40af;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      
+      .info-box, .role-card, .feature-item {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+    
+    /* Pulsante di stampa */
+    .print-button {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #3b82f6;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      z-index: 1000;
+      transition: all 0.2s;
+    }
+    
+    .print-button:hover {
+      background: #2563eb;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(0,0,0,0.3);
+    }
+    
+    /* Icone emoji per le sezioni */
+    .section-icon {
+      font-size: 1.3em;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <button class="print-button no-print" onclick="window.print()">📥 Salva come PDF</button>
+  
+  <div class="document-header">
+    <img src="data:image/webp;base64,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" alt="Elis College Logo">
+    <h1>Guida alla Piattaforma<br>Elis College</h1>
+    <p>Sistema di Gestione Residenza Universitaria</p>
+  </div>
+
+  <div class="info-box success">
+    <h3><span class="section-icon">ℹ️</span> Informazioni sul Documento</h3>
+    <p><strong>Versione:</strong> 1.0 - Settembre 2025</p>
+    <p><strong>Scopo:</strong> Guida completa all'utilizzo della piattaforma di gestione per studenti e personale della residenza Elis College.</p>
+    <p><strong>Destinatari:</strong> Studenti, Segreteria, Amministratori, Responsabili di settore</p>
+  </div>
+
+
+<style>
+  /* Diagrammi e grafici */
+  .diagram-container {
+    margin: 30px 0;
+    padding: 20px;
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    page-break-inside: avoid;
+  }
+  
+  .role-hierarchy {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 20px 0;
+  }
+  
+  .role-badge {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 25px;
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3);
+    text-align: center;
+    min-width: 150px;
+  }
+  
+  .role-badge.admin { background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%); }
+  .role-badge.secretary { background: linear-gradient(135deg, #9333ea 0%, #7e22ce 100%); }
+  .role-badge.manager { background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%); }
+  .role-badge.student { background: linear-gradient(135deg, #059669 0%, #047857 100%); }
+  
+  .workflow-step {
+    background: #f8fafc;
+    border-left: 4px solid #3b82f6;
+    padding: 15px 20px;
+    margin: 10px 0;
+    border-radius: 4px;
+    position: relative;
+  }
+  
+  .workflow-step::before {
+    content: '→';
+    position: absolute;
+    left: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+    color: #3b82f6;
+  }
+  
+  .feature-comparison {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 25px 0;
+  }
+  
+  .comparison-card {
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.2s;
+  }
+  
+  .comparison-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+  
+  .comparison-card h4 {
+    color: #1e40af;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #93c5fd;
+  }
+  
+  .checkmark {
+    color: #10b981;
+    font-weight: bold;
+    margin-right: 5px;
+  }
+  
+  .crossmark {
+    color: #ef4444;
+    font-weight: bold;
+    margin-right: 5px;
+  }
+  
+  /* Tabella di confronto funzionalità */
+  .feature-matrix {
+    width: 100%;
+    margin: 25px 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .feature-matrix th {
+    background: #1e40af;
+    color: white;
+    padding: 15px;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .feature-matrix td {
+    text-align: center;
+    padding: 12px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  
+  .feature-matrix tr:last-child td {
+    border-bottom: none;
+  }
+  
+  .feature-matrix tr:nth-child(even) {
+    background: #f8fafc;
+  }
+  
+  /* Timeline visuale */
+  .timeline {
+    position: relative;
+    padding-left: 40px;
+    margin: 30px 0;
+  }
+  
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, #3b82f6 0%, #93c5fd 100%);
+  }
+  
+  .timeline-item {
+    position: relative;
+    padding: 15px 0 15px 25px;
+    margin-bottom: 20px;
+  }
+  
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 20px;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background: #3b82f6;
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px #3b82f6;
+  }
+  
+  /* Statistiche visuali */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 25px 0;
+  }
+  
+  .stat-card {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  }
+  
+  .stat-number {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #1e40af;
+    margin: 10px 0;
+  }
+  
+  .stat-label {
+    color: #64748b;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+</style>
+
+<div class="diagram-container">
+  <h3 style="text-align: center; margin-bottom: 20px;">🎭 Gerarchia dei Ruoli</h3>
+  <div class="role-hierarchy">
+    <div class="role-badge admin">👨‍💼 Amministratore</div>
+    <div class="role-badge secretary">📋 Segreteria</div>
+    <div class="role-badge manager">🏆 Responsabili</div>
+    <div class="role-badge student">👨‍🎓 Studenti</div>
+  </div>
+</div>
+
+<div class="diagram-container">
+  <h3 style="text-align: center; margin-bottom: 20px;">📊 Funzionalità per Ruolo</h3>
+  <table class="feature-matrix">
+    <thead>
+      <tr>
+        <th>Funzionalità</th>
+        <th>Admin</th>
+        <th>Segreteria</th>
+        <th>Responsabili</th>
+        <th>Studenti</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left; font-weight: 600;">Gestione Utenti</td>
+        <td>✅</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>❌</td>
+      </tr>
+      <tr>
+        <td style="text-align: left; font-weight: 600;">Assegna Crediti</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>❌</td>
+        <td>❌</td>
+      </tr>
+      <tr>
+        <td style="text-align: left; font-weight: 600;">Conferma Pasti</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+      </tr>
+      <tr>
+        <td style="text-align: left; font-weight: 600;">Statistiche Mensa</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅*</td>
+        <td>❌</td>
+      </tr>
+      <tr>
+        <td style="text-align: left; font-weight: 600;">Gestione Bici</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅*</td>
+        <td>❌</td>
+      </tr>
+      <tr>
+        <td style="text-align: left; font-weight: 600;">Prenota Bici</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+      </tr>
+      <tr>
+        <td style="text-align: left; font-weight: 600;">Gestione Tornei</td>
+        <td>✅</td>
+        <td>❌</td>
+        <td>✅*</td>
+        <td>❌</td>
+      </tr>
+      <tr>
+        <td style="text-align: left; font-weight: 600;">Iscrizione Tornei</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+      </tr>
+      <tr>
+        <td style="text-align: left; font-weight: 600;">Codice Accesso</td>
+        <td>✅ Modifica</td>
+        <td>👁️ Solo lettura</td>
+        <td>👁️ Solo lettura</td>
+        <td>👁️ Solo lettura</td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="font-size: 0.85em; color: #64748b; margin-top: 10px;">* Solo per il proprio settore di competenza</p>
+</div>
+
+
+  <h1>Guida alla Piattaforma Elis College</h1>
+<h2>Cos&#39;è la Piattaforma</h2>
+<p>La piattaforma Elis College è un sistema di gestione completo per la residenza universitaria. Permette agli studenti e al personale di gestire in modo digitale vari aspetti della vita in residenza: dalle conferme dei pasti alle prenotazioni delle bici, dai crediti formativi ai tornei sportivi.</p>
+<h2>Ruoli Utente</h2>
+<p>La piattaforma prevede 6 tipologie di utenti, ognuno con accessi e funzionalità specifiche:</p>
+<h3>👨‍💼 Amministratore (Admin)</h3>
+<p>Ha accesso completo a tutte le funzionalità della piattaforma. Può gestire utenti, configurare il sistema e supervisionare tutte le attività.</p>
+<h3>👨‍🎓 Studente (Student)</h3>
+<p>Può accedere a tutte le funzionalità per la vita quotidiana: conferma pasti, prenota bici, partecipa ai tornei, visualizza i propri crediti.</p>
+<h3>📋 Segreteria (Secretary)</h3>
+<p>Gestisce aspetti amministrativi come l&#39;assegnazione crediti agli studenti, il monitoraggio della mensa e la gestione delle biciclette.</p>
+<h3>🏆 Responsabile Sport (Sport Manager)</h3>
+<p>Gestisce tornei sportivi, iscrizioni e attività sportive. Può anche confermare i propri pasti.</p>
+<h3>🚲 Responsabile Bici (Bike Manager)</h3>
+<p>Gestisce il parco biciclette, monitora prenotazioni e manutenzioni. Può anche confermare i propri pasti.</p>
+<h3>🍽️ Responsabile Mensa (Meal Manager)</h3>
+<p>Gestisce le conferme pasti, visualizza statistiche della mensa e gestisce gli ospiti esterni.</p>
+<hr>
+<h2>Funzionalità Principali</h2>
+<h3>🏠 Dashboard</h3>
+<p>Ogni ruolo ha una dashboard personalizzata con le informazioni più rilevanti:</p>
+<p><strong>Studenti:</strong></p>
+<ul>
+<li>Riepilogo crediti accumulati</li>
+<li>Prossimi pasti confermati</li>
+<li>Prenotazioni bici attive</li>
+<li>Tornei a cui si è iscritti</li>
+</ul>
+<p><strong>Amministratori:</strong></p>
+<ul>
+<li>Statistiche utenti (totali, attivi, nuovi oggi)</li>
+<li>Panoramica crediti (totali assegnati, in attesa)</li>
+<li>Statistiche pasti e bici</li>
+<li>Tornei attivi</li>
+</ul>
+<p><strong>Segreteria:</strong></p>
+<ul>
+<li>Conferme pasti di oggi</li>
+<li>Crediti in attesa di approvazione</li>
+<li>Gestione bici</li>
+</ul>
+<p><strong>Responsabili:</strong></p>
+<ul>
+<li>Statistiche specifiche del proprio settore</li>
+<li>Attività recenti</li>
+<li>Richieste in sospeso</li>
+</ul>
+<hr>
+<h3>🎯 Creditometro</h3>
+<p>Sistema di tracciamento delle attività extracurriculari degli studenti.</p>
+<p><strong>Cosa Possono Fare gli Studenti:</strong></p>
+<ul>
+<li>Visualizzare i propri crediti accumulati per categoria (Humanities, Communication, Economics, Innovation)</li>
+<li>Vedere lo storico delle attività svolte</li>
+<li>Consultare le attività disponibili e i relativi crediti</li>
+</ul>
+<p><strong>Cosa Possono Fare Admin e Segreteria:</strong></p>
+<ul>
+<li>Assegnare crediti agli studenti per attività svolte</li>
+<li>Creare nuove categorie di crediti</li>
+<li>Definire nuove attività con relativi punteggi</li>
+<li>Approvare o respingere richieste di crediti</li>
+<li>Visualizzare report complessivi</li>
+</ul>
+<p><strong>Come Funziona:</strong></p>
+<ol>
+<li>Gli studenti partecipano ad attività (conferenze, workshop, eventi culturali)</li>
+<li>Admin o Segreteria registrano l&#39;attività e assegnano i crediti</li>
+<li>I crediti vengono categorizzati per area tematica</li>
+<li>Gli studenti possono monitorare il proprio progresso</li>
+</ol>
+<hr>
+<h3>🍽️ Registro Pranzi (Sistema Pasti)</h3>
+<p>Sistema completo per la gestione della mensa con funzionalità avanzate per le borse pasto.</p>
+<p><strong>Funzionalità per Tutti:</strong></p>
+<ul>
+<li>Confermare presenza a colazione, pranzo e cena</li>
+<li>Richiedere borsa pasto (quando si è assenti ma si vuole il pasto da asporto)</li>
+<li>Modificare conferme fino all&#39;orario limite</li>
+<li>Visualizzare il proprio calendario settimanale</li>
+</ul>
+<p><strong>Sistema Borse Pasto:</strong></p>
+<ul>
+<li>Se richiedi borsa per la <strong>colazione</strong>, puoi scegliere se portarla a pranzo</li>
+<li>Se richiedi borsa per il <strong>pranzo</strong>, puoi scegliere se portarla a cena</li>
+<li>Quando richiedi una borsa per un pasto successivo, automaticamente quel pasto viene segnato come &quot;assente&quot;</li>
+<li>Non si può richiedere borsa per la cena (è l&#39;ultimo pasto della giornata)</li>
+</ul>
+<p><strong>Funzionalità per Admin, Segreteria e Responsabile Mensa:</strong></p>
+<ul>
+<li>Visualizzare statistiche settimanali dei pasti</li>
+<li>Vedere numero di presenti/assenti/borse per ogni pasto</li>
+<li>Aggiungere ospiti esterni alla mensa</li>
+<li>Esportare dati per la cucina</li>
+</ul>
+<p><strong>Orari Limite (Cutoff):</strong>
+Ogni pasto ha un orario limite entro cui si può modificare la conferma:</p>
+<ul>
+<li><strong>Colazione:</strong> entro sera del giorno prima</li>
+<li><strong>Pranzo:</strong> entro mattina dello stesso giorno</li>
+<li><strong>Cena:</strong> entro pomeriggio dello stesso giorno</li>
+</ul>
+<hr>
+<h3>🚲 Gestione Bici</h3>
+<p>Sistema di prenotazione e gestione del parco biciclette della residenza.</p>
+<p><strong>Cosa Possono Fare gli Studenti:</strong></p>
+<ul>
+<li>Vedere le bici disponibili in tempo reale</li>
+<li>Prenotare una bici indicando ora di partenza e rientro previsto</li>
+<li>Visualizzare le proprie prenotazioni attive e storiche</li>
+<li>Terminare una prenotazione al rientro</li>
+</ul>
+<p><strong>Cosa Possono Fare Admin, Segreteria e Responsabile Bici:</strong></p>
+<ul>
+<li>Aggiungere nuove bici al parco</li>
+<li>Rimuovere o mettere in manutenzione le bici</li>
+<li>Visualizzare tutte le prenotazioni (attive e passate)</li>
+<li>Vedere statistiche di utilizzo</li>
+<li>Gestire prenotazioni in ritardo</li>
+</ul>
+<p><strong>Stati della Bici:</strong></p>
+<ul>
+<li><strong>Disponibile:</strong> pronta per essere prenotata</li>
+<li><strong>Occupata:</strong> attualmente in uso</li>
+<li><strong>Manutenzione:</strong> non utilizzabile</li>
+</ul>
+<hr>
+<h3>🏆 Sport &amp; Tornei</h3>
+<p>Sistema per organizzare e partecipare a tornei e attività sportive.</p>
+<p><strong>Cosa Possono Fare gli Studenti:</strong></p>
+<ul>
+<li>Vedere i tornei disponibili</li>
+<li>Iscriversi ai tornei aperti (entro la scadenza)</li>
+<li>Visualizzare i propri tornei</li>
+<li>Vedere dettagli: sport, date, luogo, premi</li>
+</ul>
+<p><strong>Cosa Possono Fare Admin e Responsabile Sport:</strong></p>
+<ul>
+<li>Creare nuovi tornei (calcio, basket, pallavolo, tennis)</li>
+<li>Definire numero massimo partecipanti</li>
+<li>Impostare scadenze iscrizioni e date del torneo</li>
+<li>Gestire lo stato del torneo (aperto, in corso, completato, annullato)</li>
+<li>Visualizzare lista iscritti</li>
+<li>Aggiungere informazioni su luogo e premi</li>
+</ul>
+<p><strong>Tipi di Sport Disponibili:</strong></p>
+<ul>
+<li>⚽ Calcio</li>
+<li>🏀 Basket</li>
+<li>🏐 Pallavolo</li>
+<li>🎾 Tennis</li>
+</ul>
+<hr>
+<h3>👥 Gestione Utenti (Solo Admin)</h3>
+<p>Gli amministratori possono gestire tutti gli utenti della piattaforma.</p>
+<p><strong>Funzionalità:</strong></p>
+<ul>
+<li>Visualizzare lista completa utenti</li>
+<li>Creare nuovi account (studenti, personale, altri admin)</li>
+<li>Modificare informazioni utente (nome, email, ruoli, camera)</li>
+<li>Assegnare ruoli multipli a un utente</li>
+<li>Eliminare account</li>
+<li>Cercare e filtrare utenti</li>
+</ul>
+<p><strong>Informazioni Utente:</strong></p>
+<ul>
+<li>Nome completo</li>
+<li>Email (usata per il login)</li>
+<li>Password</li>
+<li>Ruoli assegnati (può averne più di uno)</li>
+<li>Numero camera</li>
+</ul>
+<hr>
+<h3>🔐 Codice Accesso Residenza</h3>
+<p>Sistema per visualizzare e aggiornare il codice di accesso alla residenza.</p>
+<p><strong>Chi può Visualizzare il Codice:</strong>
+Tutti gli utenti autenticati possono vedere il codice attuale nel footer della sidebar.</p>
+<p><strong>Chi può Modificare il Codice:</strong>
+Solo gli amministratori possono aggiornare il codice di accesso.</p>
+<p><strong>Come Funziona:</strong></p>
+<ul>
+<li>Il codice è visibile sempre nella parte bassa della sidebar</li>
+<li>Include una descrizione (es. &quot;Codice di accesso alla residenza&quot;)</li>
+<li>Gli admin possono cambiarlo dalle impostazioni quando necessario</li>
+</ul>
+<hr>
+<h3>⚙️ Impostazioni (Solo Admin)</h3>
+<p>Pannello di configurazione del sistema.</p>
+<p><strong>Configurazioni Disponibili:</strong></p>
+<ul>
+<li>Orari e cutoff dei pasti</li>
+<li>Codice accesso residenza</li>
+<li>Parametri sistema</li>
+<li>Gestione categorie creditometro</li>
+<li>Configurazioni generali</li>
+</ul>
+<hr>
+<h2>Flussi di Lavoro Comuni</h2>
+<h3>📅 Conferma Settimanale Pasti (Studente)</h3>
+<ol>
+<li>Accedi alla piattaforma</li>
+<li>Vai su &quot;Registro Pranzi&quot;</li>
+<li>Seleziona la settimana desiderata</li>
+<li>Per ogni giorno, clicca su colazione/pranzo/cena</li>
+<li>Scegli: Presente, Assente, o Borsa</li>
+<li>Se scegli Borsa, indica per quale pasto successivo</li>
+<li>Le modifiche sono salvate automaticamente</li>
+</ol>
+<h3>🚲 Prenotare una Bici (Studente)</h3>
+<ol>
+<li>Vai su &quot;Prenotazione Bici&quot;</li>
+<li>Visualizza le bici disponibili</li>
+<li>Clicca su &quot;Prenota&quot; sulla bici desiderata</li>
+<li>Indica ora di partenza e rientro previsto</li>
+<li>Aggiungi eventuali note</li>
+<li>Conferma la prenotazione</li>
+<li>Al rientro, termina la prenotazione</li>
+</ol>
+<h3>🎯 Assegnare Crediti (Admin/Segreteria)</h3>
+<ol>
+<li>Vai su &quot;Creditometro&quot;</li>
+<li>Clicca su &quot;Assegna Crediti&quot;</li>
+<li>Seleziona lo studente</li>
+<li>Scegli la categoria di crediti</li>
+<li>Seleziona l&#39;attività dalla lista (o creane una nuova)</li>
+<li>Verifica i crediti assegnati</li>
+<li>Aggiungi eventuali note</li>
+<li>Conferma l&#39;assegnazione</li>
+</ol>
+<h3>🏆 Creare un Torneo (Admin/Responsabile Sport)</h3>
+<ol>
+<li>Vai su &quot;Gestione Sport&quot;</li>
+<li>Clicca su &quot;Crea Nuovo Torneo&quot;</li>
+<li>Inserisci nome del torneo</li>
+<li>Seleziona lo sport</li>
+<li>Imposta numero massimo partecipanti</li>
+<li>Definisci scadenza iscrizioni</li>
+<li>Indica date inizio/fine</li>
+<li>Aggiungi luogo e descrizione</li>
+<li>Pubblica il torneo</li>
+</ol>
+<h3>👤 Creare Nuovo Utente (Admin)</h3>
+<ol>
+<li>Vai su &quot;Gestione Utenti&quot;</li>
+<li>Clicca su &quot;Aggiungi Utente&quot;</li>
+<li>Inserisci email, nome completo</li>
+<li>Imposta password iniziale</li>
+<li>Seleziona ruolo/i</li>
+<li>Indica numero camera (opzionale)</li>
+<li>Salva il nuovo utente</li>
+</ol>
+<hr>
+<h2>Accesso alla Piattaforma</h2>
+<h3>Login</h3>
+<ul>
+<li>Usa la tua email istituzionale Elis</li>
+<li>Inserisci la password fornita</li>
+<li>Al primo accesso ti verrà chiesto di cambiarla</li>
+</ul>
+<h3>Supporto</h3>
+<p>Per problemi tecnici o richieste di supporto:</p>
+<ul>
+<li>Contatta l&#39;amministratore di sistema</li>
+<li>Invia email alla segreteria college</li>
+</ul>
+<hr>
+<h2>Note Importanti</h2>
+<h3>🕐 Orari e Scadenze</h3>
+<ul>
+<li>Rispetta sempre gli orari limite per le conferme pasti</li>
+<li>Le prenotazioni bici vanno chiuse al rientro</li>
+<li>Le iscrizioni ai tornei chiudono alla scadenza indicata</li>
+</ul>
+<h3>📱 Accesso Mobile</h3>
+<ul>
+<li>La piattaforma è ottimizzata per smartphone</li>
+<li>Puoi accedere da qualsiasi dispositivo</li>
+<li>Usa il browser del telefono, non serve installare app</li>
+</ul>
+<h3>🔒 Sicurezza</h3>
+<ul>
+<li>Non condividere la tua password</li>
+<li>Esci sempre quando usi dispositivi condivisi</li>
+<li>Il codice accesso residenza è riservato agli utenti registrati</li>
+</ul>
+<h3>✅ Suggerimenti</h3>
+<ul>
+<li>Conferma i pasti sempre in anticipo</li>
+<li>Controlla regolarmente i tuoi crediti</li>
+<li>Prenota le bici con il giusto anticipo</li>
+<li>Leggi bene i dettagli dei tornei prima di iscriverti</li>
+</ul>
+<hr>
+<h2>Glossario</h2>
+<p><strong>Borsa Pasto:</strong> Pasto da asporto quando non si è presenti in mensa all&#39;orario del pasto</p>
+<p><strong>Cutoff:</strong> Orario limite entro cui si può modificare una conferma</p>
+<p><strong>Creditometro:</strong> Sistema di tracciamento attività extracurriculari con punteggi</p>
+<p><strong>Camera:</strong> Numero della stanza assegnata in residenza</p>
+<p><strong>Ruolo:</strong> Definisce i permessi e le funzionalità accessibili sulla piattaforma</p>
+<hr>
+<p><em>Ultimo aggiornamento: Settembre 2025</em></p>
+
+
+  <div class="footer">
+    <p><strong>Elis College</strong> - Piattaforma di Gestione Residenza</p>
+    <p>Per supporto tecnico, contattare l'amministratore di sistema</p>
+    <p><em>Ultimo aggiornamento: Settembre 2025</em></p>
+  </div>
+
+  <script>
+    // Rendi i flussi di lavoro come step list
+    document.querySelectorAll('h3').forEach(h3 => {
+      if (h3.textContent.includes('Conferma') || 
+          h3.textContent.includes('Prenotare') || 
+          h3.textContent.includes('Assegnare') ||
+          h3.textContent.includes('Creare')) {
+        const nextOl = h3.nextElementSibling;
+        if (nextOl && nextOl.tagName === 'OL') {
+          nextOl.classList.add('step-list');
+        }
+      }
+    });
+
+    // Aggiungi icone alle sezioni principali
+    document.querySelectorAll('h2').forEach(h2 => {
+      const text = h2.textContent;
+      let icon = '';
+      
+      if (text.includes('Dashboard')) icon = '🏠';
+      else if (text.includes('Creditometro')) icon = '🎯';
+      else if (text.includes('Pranzi') || text.includes('Pasti')) icon = '🍽️';
+      else if (text.includes('Bici')) icon = '🚲';
+      else if (text.includes('Sport')) icon = '🏆';
+      else if (text.includes('Utenti')) icon = '👥';
+      else if (text.includes('Codice')) icon = '🔐';
+      else if (text.includes('Impostazioni')) icon = '⚙️';
+      else if (text.includes('Flussi')) icon = '📋';
+      else if (text.includes('Accesso')) icon = '🔑';
+      else if (text.includes('Note')) icon = '📌';
+      else if (text.includes('Glossario')) icon = '📖';
+      
+      if (icon) {
+        h2.innerHTML = '<span class="section-icon">' + icon + '</span>' + text;
+      }
+    });
+
+    // Converti sottosezioni ruolo in card
+    document.querySelectorAll('h3').forEach(h3 => {
+      const text = h3.textContent;
+      if (text.includes('Amministratore') || text.includes('Studente') || 
+          text.includes('Segreteria') || text.includes('Responsabile') ||
+          text.includes('Manager')) {
+        
+        let icon = '';
+        if (text.includes('Amministratore')) icon = '👨‍💼';
+        else if (text.includes('Studente')) icon = '👨‍🎓';
+        else if (text.includes('Segreteria')) icon = '📋';
+        else if (text.includes('Sport')) icon = '🏆';
+        else if (text.includes('Bici') || text.includes('Bike')) icon = '🚲';
+        else if (text.includes('Mensa') || text.includes('Meal')) icon = '🍽️';
+        
+        if (icon) {
+          h3.innerHTML = '<span class="role-icon">' + icon + '</span>' + text;
+        }
+      }
+    });
+  </script>
+</body>
+</html>
